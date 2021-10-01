@@ -1,0 +1,384 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <link rel="stylesheet" href="{% static '/aboutus/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static '/aboutus/owl.theme.default.min.css' %}">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500&family=Comic+Neue&family=Poppins&family=Raleway:wght@300;400&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500&family=Comic+Neue&family=Poppins&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@500&family=Poppins&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Thambi+2:wght@400;500&family=Poppins&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="text/html"
+        href="https://fonts.google.com/specimen/Roboto+Condensed?selection.family=Roboto+Condensed:300,300i,400,400i,700,700i">
+    <!--<link rel="stylesheet" href="/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- ANIMATE.CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <title>about us
+    </title>
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        hr {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            margin-right: 50px;
+            margin-left: 50px;
+            border: 1;
+            border-top: 3px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .owlsize {
+
+            height: 500px;
+            width: 500px
+        }
+
+        .wrapper {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+
+        }
+
+        .my-image-text {
+            z-index: 1;
+            font-size: 1.2em;
+            margin-top: -100px;
+        }
+
+        .imagebackdiv {
+            height: 100%;
+            padding: 0;
+        }
+
+        .imageOuter {
+            height: 100%;
+            padding-right: 0%;
+            padding-left: 0%;
+            background-image: url("{% static '/aboutus/image2.jpg' %}");
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .imageInner {
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .ourStory {
+            border: solid #41464b;
+            border-width: 0 10px 0 0;
+        }
+
+        .ourAim{
+            border: solid #41464b;
+            border-width: 0 0 0 10px;
+        }
+
+        @media (max-width: 767px){
+            .imagebackdiv h1{
+                font-size: 40px;
+            }
+            .aimHeading-r{
+                display: none;
+            }
+            .aimHeading-l{
+                display: block !important;
+            }
+        }
+      
+    </style>
+</head>
+
+<body>
+
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img style="max-width: 40%;" src="{% static 'logo_light2.png' %}"
+                alt="logo" /></a></h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home:home' %}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'aboutus:aboutus' %}">About Us</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery:gallery' %}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'articles:list' %}">Blogs</a>                 
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'video:videopage' %}">Video Of the day</a>                 
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Content
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">JAM</a>
+                      <a class="dropdown-item" href="{% url 'homework:assignhomework' %}">Homework</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url  'vocab:storewords' %}">Words</a>
+                    </div>
+                </li>
+                
+                
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <div class="container-fluid imagebackdiv">
+        <div class="imageOuter">
+            <div class="imageInner">
+                <!-- <img src="{% static '/aboutus/image2.jpg' %}" class="img-fluid" style="z-index: 0; height:800px" alt="Responsive image"> -->
+                <div class="carousel-caption">
+                    <h1 class="display-3 animated zoomIn" style="font-family: 'Poppins', sans-serif;">Welcome to the
+                        world of Enarators
+                    </h1>
+                    <p class="lead animated zoomIn">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio id ad
+                        ipsa mollitia
+                        libero quo reiciendis architecto eum modi nemo iusto, quaerat, tempora consequuntur sequi nobis
+                        aliquam. Voluptates, aliquid tempore. </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="ourStory">
+        <div class="container" style="padding-top:50px">
+
+            <div class="row">
+
+                <div class="col-sm-6">
+                    <h1 class="display-3" style="font-family: 'Raleway', sans-serif;">OUR STORY</h1>
+                </div>
+                <div class="col-sm-6">
+                    <p class="lead" style="font-family: 'Comic Neue', cursive;"> Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos sit magni odio aspernatur veniam cum nostrum. Voluptatum quam quis
+                        asperiores?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium consectetur amet dolores,
+                        maiores exercitationem ipsam obcaecati voluptas! Ratione repellat ipsum quam, blanditiis, et
+                        aliquid omnis nulla illo vel dolor adipisci!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus odit nemo amet. Tempore
+                        nam voluptatum cumque alias nostrum, porro veniam modi sapiente repellendus nihil architecto
+                        eligendi dolores nemo suscipit!
+                    </p>
+                    <p class="lead" style="font-family: 'Comic Neue', cursive;"> Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos sit magni odio aspernatur veniam cum nostrum. Voluptatum quam quis
+                        asperiores?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium consectetur amet dolores,
+                        maiores exercitationem ipsam obcaecati voluptas! Ratione repellat ipsum quam, blanditiis, et
+                        aliquid omnis nulla illo vel dolor adipisci!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus odit nemo amet. Tempore
+                        nam voluptatum cumque alias nostrum, porro veniam modi sapiente repellendus nihil architecto
+                        eligendi dolores nemo suscipit!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="ourAim">
+        <div class="container" style="padding-top:50px">
+            <div class="row">
+                <div class="aimContent col-sm-6">
+                    <h1 class="display-3 aimHeading-l" style="font-family: 'Raleway', sans-serif; display: none;">OUR AIM</h1>
+                    <p class="lead" style="font-family: 'Comic Neue', cursive;"> Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos sit magni odio aspernatur veniam cum nostrum. Voluptatum quam quis
+                        asperiores?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium consectetur amet dolores,
+                        maiores exercitationem ipsam obcaecati voluptas! Ratione repellat ipsum quam, blanditiis, et
+                        aliquid
+                        omnis nulla illo vel dolor adipisci!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus odit nemo amet. Tempore
+                        nam
+                        voluptatum cumque alias nostrum, porro veniam modi sapiente repellendus nihil architecto
+                        eligendi
+                        dolores nemo suscipit!
+                    </p>
+                    <p class="lead" style="font-family: 'Comic Neue', cursive;"> Lorem ipsum dolor sit amet consectetur
+                        adipisicing elit. Quos sit magni odio aspernatur veniam cum nostrum. Voluptatum quam quis
+                        asperiores?
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium consectetur amet dolores,
+                        maiores exercitationem ipsam obcaecati voluptas! Ratione repellat ipsum quam, blanditiis, et
+                        aliquid
+                        omnis nulla illo vel dolor adipisci!
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi ducimus odit nemo amet. Tempore
+                        nam
+                        voluptatum cumque alias nostrum, porro veniam modi sapiente repellendus nihil architecto
+                        eligendi
+                        dolores nemo suscipit!
+                    </p>
+                </div>
+                <div class="aimHeading-r col-sm-6">
+                    <h1 class="display-3" style="font-family: 'Raleway', sans-serif;">OUR AIM</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid imagebackdiv" style="background-color: grey; height:500px;  display: flex;
+    justify-content: center;
+    align-items: center;">
+        <div>
+            <h1 class="display-3"
+                style="text-align: center;margin-top:7%; vertical-align: middle ;font-family: 'Raleway', sans-serif;">
+                TAKE YOUR CONFIDENCE AND SPEAKING SKILLS TO THE NEXT LEVEL</h1>
+        </div>
+
+    </div>
+
+
+    <div class="conatiner" style="margin-top: 50px;margin-bottom:50px">
+        <h1 class="disply-4" style="text-align: center;font-family: 'Raleway', sans-serif;">OUR FOUNDING MEMBERS</h1>
+    </div>
+
+
+    <div class="container" style="border:solid indigo 2px;">
+        <div class="wrapper">
+
+            <div class="owl-carousel owl-theme">
+
+                <div class="item owlsize"><img src="{% static '/aboutus/person.jpg' %}" class="owlsize" alt="">
+                    <div class="carousel-caption">
+                        <h6>APURV RATHORE</h6>
+                    </div>
+
+                </div>
+                <div class="item owlsize"><img class="owlsize" src="{% static '/aboutus/apurv.jpg' %}" alt="">
+                    <div class="carousel-caption">
+                        <h6>APURV RATHORE</h6>
+                    </div>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+                <div class="item owlsize">
+                    <h4><img src="{% static '/aboutus/person.png' %}" alt="" class="owlsize">
+                        <div class="carousel-caption">
+                            <h6>APURV RATHORE</h6>
+                        </div>
+                    </h4>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="{% static 'aboutus/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'aboutus/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'aboutus/jquer.js' %}"></script>
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+<!-- WOW JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">  </script>
+
+</html>

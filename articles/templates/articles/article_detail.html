@@ -1,0 +1,13 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="article-detail">
+    <div class="article">
+        <img src="{{ article.thumb.url }}" />
+        <h2 style="font-family: sans-serif;">{{ article.title }}</h2>
+        <h3 style="font-family: Roboto, sans-serif;">Written by {{ article.author.username }}</h3>
+        <p style="font-family: Roboto, sans-serif;">{{ article.body }}</p>
+        <p style="font-family: Roboto, sans-serif;">{{ article.date }}</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% load static %}
+
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Homework</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img style="max-width: 40%;" src="{% static 'logo_light2.png' %}"
+                alt="logo" /></a></h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home:home' %}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'aboutus:aboutus' %}">About Us</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery:gallery' %}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'articles:list' %}">Blogs</a>                 
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'video:videopage' %}">Video Of the day</a>                 
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Content
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">JAM</a>
+                      <a class="dropdown-item" href="{% url 'homework:assignhomework' %}">Homework</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url  'vocab:storewords' %}">Words</a>
+                    </div>
+                </li>
+                
+                
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <h1>Do your work before deadline and live well</h1>
+    <a href="{% url 'homework:shuffle' %}">Update home work list</a>
+    <ul>
+        {% for k,v in dict.items %}
+            <li>
+                {% load file %}
+                <a href="{% url 'homework:sendhomework' k v %}"> #  </a>  {{ newlist|index:k }} ---> {{ newlist|index:v }}
+                <br><hr>
+            </li>
+        {% endfor %}    
+    </ul>
+</body>
+<!-- JQUERY CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- BOOTSTRAP CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</html>
+
+
+ 

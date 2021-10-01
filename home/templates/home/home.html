@@ -1,0 +1,419 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Enarrators</title>
+    <!-- BOOTSTRAP CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- ANIMATE.CSS CDN-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- GOOGLE FONTS CDN -->
+    <link rel="text/html"
+        href="https://fonts.google.com/specimen/Roboto+Condensed?selection.family=Roboto+Condensed:300,300i,400,400i,700,700i">
+    <!-- OWL CAROUSEL CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <!-- HOME.CSS FILE -->
+    <link rel="stylesheet" href="{% static 'home/css/home.css' %}">
+    <!-- RESPONSIVE.CSS FILE -->
+    <link rel="stylesheet" href="{% static 'home/css/responsive.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img style="max-width: 40%;" src="{% static 'logo_light2.png' %}"
+                alt="logo" /></a></h1></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="{% url 'home:home' %}">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'aboutus:aboutus' %}">About Us</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gallery:gallery' %}">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'articles:list' %}">Blogs</a>                 
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'video:videopage' %}">Video Of the day</a>                 
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Content
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="#">JAM</a>
+                      <a class="dropdown-item" href="{% url 'homework:assignhomework' %}">Homework</a>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="{% url  'vocab:storewords' %}">Words</a>
+                    </div>
+                </li>
+                
+                
+              </ul>
+            </div>
+          </nav>
+    </header>
+
+    <section id="home">
+        <div class="home-img-wrapper parallax animated fadeIn">
+            <div class="home-content">
+                <div class="home-content-inner">
+                    <div class="home-heading animated zoomIn">
+                        <h1>Welcome to Enarrators!</h1>
+                        <h1>Improve your speaking skills with us.</h1>
+                    </div>
+                    <div class="home-btn animated zoomIn">
+                        <a href="#aim" class="btn btn-lg button-white">Why join us?</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aim">
+        <div class="container">
+            <div class="aim-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
+                <h1 class="heading-gn text-center">Our Aim</h1>
+                <div class="heading-line"></div>
+            </div>
+            <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                <div class="col-lg-4">
+                    <div class="aim-content text-center">
+                        <h2 class="aim-content-heading">Improve</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corporis aia culoria sista aa
+                            stha iht expedita.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="aim-content text-center">
+                        <h2 class="aim-content-heading">Improve</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corporis aia culoria sista
+                            stha iht expedita.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="aim-content text-center">
+                        <h2 class="aim-content-heading">Improve</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corporis aia culoria sista
+                            stha iht expedita.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="aim-content text-center">
+                        <h2 class="aim-content-heading">Improve</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corporis aia culoria sista
+                            stha iht expedita.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="aim-content text-center">
+                        <h2 class="aim-content-heading">Improve</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corporis aia culoria sista
+                            stha iht expedita.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="aim-content text-center">
+                        <h2 class="aim-content-heading">Improve</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo corporis aia culoria sista
+                            stha iht expedita.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="word">
+        <div class="word-title wow animated fadeIndown" data-wow-duration="1s" data-wow-delay=".5s">
+            <h4 class="word-heading">Today's word:<a href="{% url 'vocab:storewords'%}">(all words)</a></h4>
+            <ul>
+                <li>
+                    {{ word.new_word }} :- {{ word.meaning }}
+                </li>
+                <li>
+                    Example :- {{ word.example }}
+                </li>
+            </ul>
+        </div>
+    </section>
+    
+    <section id="events">
+        <div class="events-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
+            <h1 class="events-heading heading-gn text-center">Events</h1>
+            <div class="heading-line"></div>
+        </div>
+        <div class="carousel wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+            <button class="carousel__button carousel__button--left is-hidden">
+                <img src="{% static 'home/img/events/left.jpeg' %}">
+            </button>
+            <div class="carousel__track-container">
+                <ul class="carousel__track">
+                    <li class="carousel__slide current-slide ">
+                        <img class="carousel__image" src="https://images.unsplash.com/photo-1506422748879-887454f9cdff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80" alt="Image 1">
+                        <div class="caption">
+                            <h1>Image 1</h1>
+                        </div>
+                    </li>
+                    <li class="carousel__slide">
+                        <img class="carousel__image" src="https://s7d2.scene7.com/is/image/honeywellstage/ConnectedBuildingTLHero1800x900?wid=1100&hei=550" alt="Image 2">
+                        <div class="caption">
+                            <h1>Image 1</h1>
+                        </div>
+                    </li>
+                    <li class="carousel__slide">
+                        <img class="carousel__image" src="https://media.gettyimages.com/photos/abandoned-corner-brick-building-picture-id957124984?b=1&k=6&m=957124984&s=612x612&w=0&h=Csn4FTENdd6ki6a_QL3s6qVcnhYL9mms0m83oIdTst4=" alt="Image 3">
+                        <div class="caption">
+                            <h1>Image 1</h1>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <button class="carousel__button carousel__button--right">
+                <img src="{% static 'home/img/events/right.jpeg' %}">
+            </button>
+            <div class="carousel__nav">
+                <button class="carousel__indicator current-slide"></button>
+                <button class="carousel__indicator"></button>
+                <button class="carousel__indicator"></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="blogs">
+        <div class="blogs-cover parallax">
+            <div class="blogs-content-box">
+                <div class="blogs-title wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
+                    <h1 class="blogs-heading heading-gn text-center">Blogs</h1>
+                    <div class="heading-line"></div>
+                </div>
+                <div class="container">
+                    <div class="row wow animated bounceInDown" data-wow-duration="1s" data-wow-delay=".5s">
+                        <div class="col-md-12">
+                            <div class="blogs-plural text-center owl-carousel owl-theme">
+                                <div class="blogs-singular">
+                                    <img src="{% static 'home/img/blogs/blog-1.jpg' %}" class="img-responsive rounded-circle" alt="blogger">
+                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Iusto, quia
+                                        laboriosam sed ipsam iure ipsa recusandae rem, veritatis est quaerat quidem in
+                                        quas quo
+                                        inventore voluptatem minus reprehenderit quae. </p>
+
+                                    <div class="blogger">
+                                        <p>
+                                            <strong>Jaglike Makkar</strong>
+                                            CEO & Founder - Google
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="blogs-singular">
+                                    <img src="{% static 'home/img/blogs/blog-2.jpg' %}" class="img-responsive rounded-circle" alt="blogger">
+                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Iusto, quia
+                                        laboriosam sed ipsam iure ipsa recusandae rem, veritatis est quaerat quidem in
+                                        quas quo
+                                        inventore voluptatem minus reprehenderit quae. </p>
+
+                                    <div class="blogger">
+                                        <p>
+                                            <strong>Anant Dhakkad</strong>
+                                            CEO & Founder - Microsoft
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="blogs-singular">
+                                    <img src="{% static 'home/img/blogs/blog-3.jpg' %}" class="img-responsive rounded-circle" alt="blogger">
+                                    <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Iusto, quia
+                                        laboriosam sed ipsam iure ipsa recusandae rem, veritatis est quaerat quidem in
+                                        quas quo
+                                        inventore voluptatem minus reprehenderit quae. </p>
+
+                                    <div class="blogger">
+                                        <p>
+                                            <strong>Apurv Rathore</strong>
+                                            CEO & Founder - KuchNahi
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="content-box">
+            <div class="wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">
+                <h3 class="heading-gn text-center">Our Team</h3>
+                <div class="heading-line"></div>
+            </div>
+
+            <div class="container">
+                <div class="row wow animated fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+                    <div class="col-md-12">
+                        <div id="team-members" class="owl-carousel owl-theme">
+                            <div class="team-member">
+                                <img src="{% static 'home/img/team/team-1.jpg' %}" class="img-fluid" alt="Team Member">
+                                <div class="team-member-info text-center">
+                                    <h4 class="team-member-name">Mr. Mon Key</h4>
+                                    <h4 class="team-member-designation">Overall Coordinator</h4>
+                                    <ul class="social-list">
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i
+                                                    class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <img src="{% static 'home/img/team/team-2.jpg' %}" class="img-fluid" alt="Team Member">
+                                <div class="team-member-info text-center">
+                                    <h4 class="team-member-name">Sara Smith</h4>
+                                    <h4 class="team-member-designation">Back-end head</h4>
+                                    <ul class="social-list">
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i
+                                                    class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <img src="{% static 'home/img/team/team-3.jpg' %}" class="img-fluid" alt="Team Member">
+                                <div class="team-member-info text-center">
+                                    <h4 class="team-member-name">Brayan Lee</h4>
+                                    <h4 class="team-member-designation">Frontend Head</h4>
+                                    <ul class="social-list">
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i
+                                                    class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <img src="{% static 'home/img/team/team-4.jpg' %}" class="img-fluid" alt="Team Member">
+                                <div class="team-member-info text-center">
+                                    <h4 class="team-member-name">Miss Julie</h4>
+                                    <h4 class="team-member-designation">Sr. Designer</h4>
+                                    <ul class="social-list">
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i
+                                                    class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="team-member">
+                                <img src="{% static 'home/img/team/team-5.jpg' %}" class="img-fluid" alt="Team Member">
+                                <div class="team-member-info text-center">
+                                    <h4 class="team-member-name">Ghansham Lal</h4>
+                                    <h4 class="team-member-designation">Content-writer</h4>
+                                    <ul class="social-list">
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-facebook"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i class="fa fa-twitter"></i></a>
+                                        </li>
+                                        <li><a href="#" class="social-icon icon-gray"><i
+                                                    class="fa fa-google-plus"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div id="contact">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div id="contact-left">
+                            <h3>Enarrators</h3>
+                            <p>We believe to <strong> Improve</strong>, <strong>Improve</strong> &
+                                <strong>Improve</strong>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga enim, consequatur.</p>
+                            <div id="contact-info">
+                                <address>
+                                    <strong>Headquarters</strong><br>
+                                    <p>221 Jockey Hollow, Svite 600<br> Smithdown, NY 11787</p>
+                                </address>
+                                <div id="phone-fax-email">
+                                    <p><strong>Phone:</strong> <span>9876543210</span></p>
+                                    <p><strong>Email:</strong> <span>lallu@parsad.com</span></p>
+                                </div>
+                            </div>
+                            <ul class="social-list">
+                                <li><a href="#" class="social-icon icon-white"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="#" class="social-icon icon-white"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#" class="social-icon icon-white"><i class="fa fa-youtube"></i></a></li>
+                                <li><a href="#" class="social-icon icon-white"><i class="fa fa-google-plus"></i></a>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div id="contact-right">
+                            <h3>Contact Us</h3>
+                            <form action="#">
+                                <input type="text" name="full-name" placeholder="Full Name" class="form-control">
+                                <input type="text" name="email" placeholder="Email Address" class="form-control">
+                                <textarea rows="5" name="message" placeholder="Message..."
+                                    class="form-control"></textarea>
+
+                                <div id="send-btn">
+                                    <a class="btn btn-lg button-white" href="#" role="button">Send</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+<!-- JQUERY CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- BOOTSTRAP CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+<!-- WOW JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js">  </script>
+<!-- OWL CAROUSEL CDN -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<!-- HOME.JS FILE-->
+<script src="{% static 'home/js/home.js' %}"></script>
+
+</html>

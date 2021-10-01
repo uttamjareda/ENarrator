@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Gallery</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/cfda76cef3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="{% static 'gallery/gallery.css' %}">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img style="max-width: 40%;" src="{% static 'logo_light2.png' %}"
+            alt="logo" /></a></h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home:home' %}">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'aboutus:aboutus' %}">About Us</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'gallery:gallery' %}">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'articles:list' %}">Blogs</a>                 
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'video:videopage' %}">Video Of the day</a>                 
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Content
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">JAM</a>
+                  <a class="dropdown-item" href="{% url 'homework:assignhomework' %}">Homework</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url  'vocab:storewords' %}">Words</a>
+                </div>
+            </li>
+            
+            
+          </ul>
+        </div>
+      </nav>
+</header>
+
+
+
+  <div class="row">
+    {% for image in images_list %}
+    <div class=" column">
+      <img src="{{ image.image.url }}" onclick="openModal();currentSlide(1)" class="img hover-shadow">
+    </div>
+    {% endfor %}
+  </div>
+
+
+  <!-- The Modal/Lightbox -->
+  <div id="myModal" class="modal">
+    <span class="close cursor" onclick="closeModal()">&times;</span>
+    <div class="modal-content">
+      
+      {% for image in images_list %}
+      <div class="mySlides">
+        <div class="numbertext">1 / 20</div>
+        <img src="{{ image.image.url }}" style="width:100%"  class="mine">
+      </div>
+      {% endfor %}
+
+
+
+
+      <!-- Next/previous controls -->
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next"  onclick="plusSlides(1)">&#10095;</a>
+
+      <!-- Caption text -->
+
+
+      <!-- Thumbnail image controls -->
+
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+
+<div class="row" >
+  <footer id="footer">
+    <a href="facebook.com"></a> <i class=" soci fab fa-faceboook"></i>
+    <i class="soci fab fa-twitter"></i>
+    <i class=" soci fab fa-instagram"></i>
+    <i class="soci fab fa-envelope"></i>
+    <p> oratory Club :</p>
+
+  </footer>
+</div>
+
+
+<script type="text/javascript" src="{% static 'gallery/gallery.js' %}">
+
+</script>
+
+</body>
+
+</html>

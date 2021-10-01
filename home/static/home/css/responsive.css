@@ -1,0 +1,16 @@
+@media (max-width : 1000px){
+    .home-content-inner h1{
+        font-size: 50px;
+    }
+    .blogs-singular p{
+        padding : 6px 0px
+    }
+
+    .navbar-brand img{
+        max-width: 70% !important;
+    }
+
+    nav li{
+        font-size: 25px !important;
+    }
+}

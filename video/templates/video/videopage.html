@@ -1,0 +1,126 @@
+{% load static %}
+{% load embed_video_tags %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+	<meta http-equiv="content-script-type" content="text/javascript" />
+	<meta http-equiv="content-style-type" content="text/css" />
+	<meta http-equiv="content-language" content="nl" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="author" content="Enarrators, IIT Ropar the official public speaking club" />
+	<meta name="description" content="develope" />
+	<meta name="keywords"
+		content="IIT Ropar, Public Speaking, Web development, Web developer, College clubs, have fun in college, leadership, team management, public speaking tutorials, IIT Ropar students's blogs" />
+	<meta name="revisit-after" content="7 days" />
+
+	<title>Session Tutorials, Enarrators, IIT Ropar</title>
+	<!-- BOOTSTRAP CDN -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	<link href="{% static 'video/css/style.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+	<header>
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+			<a class="navbar-brand" href="#"><img style="max-width: 40%;" src="{% static 'logo_light2.png' %}"
+					alt="logo" /></a></h1></a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{% url 'home:home' %}">Home<span class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'aboutus:aboutus' %}">About Us</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'gallery:gallery' %}">Gallery</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'articles:list' %}">Blogs</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="{% url 'video:videopage' %}">Video Of the day</a>
+					</li>
+
+					<li class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							Content
+						</a>
+						<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a class="dropdown-item" href="#">JAM</a>
+							<a class="dropdown-item" href="{% url 'homework:assignhomework' %}">Homework</a>
+							<div class="dropdown-divider"></div>
+							<a class="dropdown-item" href="{% url  'vocab:storewords' %}">Words</a>
+						</div>
+					</li>
+
+
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="animator">
+		<div class="zoominheader">
+			<div class="zoomoutheader">
+			</div>
+		</div>
+		<div id="toptext" class="container text-center">
+			<p class="bolder">Embarrasment </p>
+
+			<p class="normal">is far better than </p>
+			<p class="bolder"> regret, </p>
+
+			<p class="normal"> so don't wait and go for it.</p>
+
+		</div>
+
+	</div>
+
+	<div id="videostuff">
+		<h1 style="margin-top: 100px; margin-bottom: 50px; font-weight: 600;"
+			class="text-center wow animated fadeInDown" data-wow-duration="1s" data-wow-delay=".5s">LESSON OF THE DAY
+		</h1>
+		<hr />
+
+		<div style="margin-top: 100px" class="container-fluid">
+			<div class="row ">
+				<div class="col-md-6">
+					<div class="videowrapper">
+						{% video video.videolink 'medium' %}
+					</div>
+				</div>
+				<div id="authorviews" class="col-md-6">
+					<h1 class="text-center">Author's Views</h1>
+					<p> {{ video.text }}</p>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div id="comments" class="container-fluid">
+			<h1 style="text-decoration:underline;margin-top: 80px; margin-left:50px" text-left">Comments</h1>
+		</div>
+	</div>
+
+</body>
+
+<!-- JQUERY CDN -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+	integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- BOOTSTRAP CDN -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>

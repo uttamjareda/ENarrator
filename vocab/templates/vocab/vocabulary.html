@@ -1,0 +1,138 @@
+{%load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- bootstrap 4 css -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <title></title>
+</head>
+
+<body>
+
+
+  <header>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"><img style="max-width: 40%;" src="{% static 'logo_light2.png' %}"
+            alt="logo" /></a></h1></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'home:home' %}">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'aboutus:aboutus' %}">About Us</a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'gallery:gallery' %}">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'articles:list' %}">Blogs</a>                 
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'video:videopage' %}">Video Of the day</a>                 
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Content
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">JAM</a>
+                  <a class="dropdown-item" href="{% url 'homework:assignhomework' %}">Homework</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url  'vocab:storewords' %}">Words</a>
+                </div>
+            </li>
+            
+            
+          </ul>
+        </div>
+      </nav>
+</header>
+  <!-- Navebar ends -->
+
+  
+  <!-- vocabulary heading -->
+  <div class="container text-center text-dark">
+    <h1>Vocabulary</h1>
+    <hr class="w-25 mx-auto pt-5">
+  </div>
+  <!-- vocabulary heading ends -->
+  <a href="{% url 'vocab:wordlist'%}">VocabListByDate</a>
+  <a href="{% url 'vocab:addword' %}">AddNewWord</a>
+  <!-- navebar for word letters -->
+  <nav class="navbar navbar-expand-sm bg-light justify-content-center mb-5 navbar-light">
+    <!-- Links -->
+    <ul class="navbar-nav font-weight-bold">
+      {%for c in alphabets %}
+      <li class="nav-item">
+        <a class="nav-link" href="#{{c}}">{{c}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <!-- navebar for word letters ends -->
+
+
+
+  <!-- word meaning table -->
+  <div class="container">
+    <div class="table-responsive-sm">
+      <table class="table table-secondary table-hover table-striped">
+        <thead>
+          <tr>
+            <th>Word/Phrase</th>
+            <th>Meaning</th>
+            <th>Example</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!--loop will start from here-->
+          {% for set in words %}
+          {% load file %}
+          {% for item in set|index:2 %}
+          {% if forloop.counter == 1 %}
+          <tr id="{{set|index:0}}">
+            <td>{{item|index:0}}</td>
+            <td>{{item|index:1}}</td>
+            <td>{{item|index:2}}</td>
+          </tr>
+          {% endif %}
+          {% if forloop.counter > 1 %}
+          <tr>
+            <td>{{item|index:0}}</td>
+            <td>{{item|index:1}}</td>
+            <td>{{item|index:2}}</td>
+          </tr>
+          {% endif %}
+          {% endfor %}
+          {% endfor %}
+          <!--loop ends here-->
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <!-- table ends -->
+
+
+  <!-- bootsrap4 scipts -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <!-- bootstrap4 scripts ends -->
+</body>
+
+</html>
